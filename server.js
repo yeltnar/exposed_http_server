@@ -1,8 +1,6 @@
 const express = require('express');
 const {router:file_router} = require('./file_router.js');
 
-console.log(file_router);
-
 const app = express();
 
 app.use(file_router);
