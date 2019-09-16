@@ -7,7 +7,7 @@
     "start":"node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pm2":"pm2 start server.js",
-    "docker":"export NAME=\"exposed_http_server\" && docker build . -t $NAME && docker run -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME"
+    "docker":"export NAME=\"exposed_http_server\" && docker build . -t $NAME && docker run --restart=always -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME"
   },
   "author": "",
   "license": "ISC",
