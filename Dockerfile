@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12.13.0
 
 # put this just after node so we can reuse the pm2 image 
 # RUN npm i -g pm2
