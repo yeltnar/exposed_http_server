@@ -1,5 +1,4 @@
-FROM node:10.16.0
-
+FROM node:12
 
 # put this just after node so we can reuse the pm2 image 
 # RUN npm i -g pm2
@@ -13,6 +12,8 @@ COPY package*.json ./
 RUN npm i
 
 COPY . .
+
+EXPOSE 3000
 
 # CMD ["pm2-runtime","server.js","--name","exposed_http_server"]
 CMD npm start  

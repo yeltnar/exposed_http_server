@@ -19,6 +19,9 @@ router.use((req,res,next)=>{
         dir_contents = dir_contents.join("");
     }catch(e){
         err = e;
+        dir_contents=JSON.stringify({
+            originalUrl
+        });
     }
 
     // res.json({
