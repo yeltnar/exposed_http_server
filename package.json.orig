@@ -1,0 +1,27 @@
+{
+  "name": "http_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
+    "pm2": "pm2 start server.js",
+    "docker": "export NAME=\"exposed_http_server\" && docker build . -t $NAME && docker run --restart=always -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME",
+    "sudo_docker": "export NAME=\"exposed_http_server\" && sudo docker build -t $NAME . && sudo docker run --restart=always -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME",
+    "docker_setup": "mkdir config; mkdir config/key; cd config/key && openssl req -nodes -new -x509 -keyout server.key -out server.cert"
+=======
+    "pm2":"pm2 start server.js",
+    "docker":"export NAME=\"exposed_http_server\" && docker build . -t $NAME && docker run --restart=always -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME",
+    "docker_local":"export NAME=\"http_server\" && docker build . -t $NAME && docker run --restart=always -p 3000:3000 -v /:/usr/src/app/mnt -d $NAME",
+    "sudo_docker":"export NAME=\"exposed_http_server\" && sudo docker build -t $NAME . && sudo docker run --restart=always -p 3000:3000 -v $(pwd)/mnt:/usr/src/app/mnt -d $NAME",
+    "docker_setup":"mkdir config; mkdir config/key; cd config/key && openssl req -nodes -new -x509 -keyout server.key -out server.cert"
+>>>>>>> 479785a877815a784f046196e7ef68e838c2b494
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -20,7 +20,9 @@ router.use((req,res,next)=>{
     }catch(e){
         err = e;
         dir_contents=JSON.stringify({
-            originalUrl
+            originalUrl,
+            error:true,
+            err_msg:err,
         });
     }
 
