@@ -9,7 +9,7 @@ router.use((req,res,next)=>{
     
     let {originalUrl} = req;
 
-    originalUrl = decodeURIComponent(originalUrl).split(" ").join("\\ ");
+    originalUrl = decodeURIComponent(originalUrl);//.split(" ").join("\\ ");
 
     let dir_contents;
     let err;
