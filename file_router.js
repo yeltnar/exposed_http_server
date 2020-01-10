@@ -7,7 +7,9 @@ router.use("/",express.static("./mnt",{fallthrough:true}));
 
 router.use((req,res,next)=>{
     
-    const {originalUrl} = req;
+    let {originalUrl} = req;
+
+    originalUrl = decodeURIComponent(originalUrl).split(" ").join("\\ ");
 
     let dir_contents;
     let err;
