@@ -14,7 +14,7 @@ router.use((req,res,next)=>{
     try{
         dir_contents = fs.readdirSync(`./mnt${originalUrl}`);
         dir_contents = [`<!DOCTYPE html><meta charset="UTF-8"><HTML>`,...dir_contents.map((cur,i,arr)=>{
-            return `<a href="javascript:(()=>{window.location.href+='${cur}'})()">${cur}</a></br>`;
+            return `<a href="javascript:(()=>{window.location.href+='${encodeURIComponent(cur)}'})()">${cur}</a></br>`;
         }),`</HTML>`];
         dir_contents = dir_contents.join("");
     }catch(e){
